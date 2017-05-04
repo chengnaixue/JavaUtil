@@ -1,6 +1,7 @@
 package util;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 import annotation.Mapping;
 
@@ -25,6 +26,11 @@ public class CopyUtil {
 			Field[] fields = clazz.getDeclaredFields();
 			toObject = clazz.newInstance();
 			for (Field tofield : fields){
+				//静态变量，常量，不做拷贝
+				int mod = tofield.getModifiers();
+				if(Modifier.isFinal(mod)||Modifier.isStatic(mod)){
+					continue;
+				}
 				//获取to类的字段名称
 				String tofieldname = tofield.getName();
 				//获取from类的字段名称
