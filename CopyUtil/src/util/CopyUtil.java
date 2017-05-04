@@ -63,9 +63,5 @@ public class CopyUtil {
 		return toObject;
 		
 	}
-	
-//	public static boolean isPrimitive(Class<?> clazz){
-//		
-//	}
 
 }
