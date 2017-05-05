@@ -2,6 +2,8 @@ package util;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.List;
 
 import annotation.Mapping;
 
@@ -19,7 +21,7 @@ public class CopyUtil {
 		Class<?> fromClass = fromObj.getClass();
 		try{
 			//如果是基本类型，则直接返回
-			if(clazz.isPrimitive()){
+			if(clazz.isPrimitive() || isPrimitive(clazz)){
 				return (T)fromObj;
 			}
 			
@@ -62,6 +64,18 @@ public class CopyUtil {
 		
 		return toObject;
 		
+	}
+	
+	public static boolean isPrimitive(Class<?> clazz){
+		List<Class<?>> list = new ArrayList<Class<?>>();
+		list.add(Long.class);
+		list.add(Double.class);
+		list.add(Integer.class);
+		list.add(String.class);
+		list.add(Boolean.class);
+		list.add(java.util.Date.class);
+		list.add(java.sql.Date.class);
+		return list.contains(clazz);
 	}
 
 }
