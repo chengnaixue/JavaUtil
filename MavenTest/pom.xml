@@ -21,6 +21,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.5</version>
 					<configuration>
 						<!-- append assembly id in release file name -->
 						<appendAssemblyId>true</appendAssemblyId>
