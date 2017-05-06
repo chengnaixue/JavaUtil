@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cib</groupId>
+	<artifactId>MavenTest</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1</version>
+	<name>Maven Quick Start Archetype	</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.4.4</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>make-zip</id>
+							<!--绑定到package生命周期阶段上 -->
+							<phase>package</phase>
+							<goals>
+								<!--绑定到package生命周期阶段上 -->
+								<goal>single</goal>
+							</goals>
+							<configuration>
+								<!-- 描述文件路径 -->
+								<descriptors>
+									<descriptor>src/main/assembly/assembly.xml</descriptor>
+								</descriptors>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
