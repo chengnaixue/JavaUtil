@@ -8,6 +8,7 @@ import com.chengnx.entity.Student;
 
 public class TestAtomicReference {
 	
+	@SuppressWarnings("unused")
 	private static Log log = LogFactory.getLog(TestAtomicReference.class);
 	
 	public static void main(String[] args){
